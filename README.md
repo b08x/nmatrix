@@ -1,9 +1,8 @@
 # NMatrix
 
-[![CI](https://github.com/b08x/nmatrix/actions/workflows/rubygem.yml/badge.svg
-)](https://github.com/b08x/nmatrix/actions/workflows/rubygem.yml)
+[![CI](https://github.com/b08x/nmatrix/actions/workflows/rubygem.yml/badge.svg?branch=development)](https://github.com/b08x/nmatrix/actions/workflows/rubygem.yml)
 
-[<img src="https://badges.gitter.im/SciRuby/nmatrix.svg" alt="Join the chat at
+<img src="https://badges.gitter.im/SciRuby/nmatrix.svg" alt="Join the chat at
 https://gitter.im/SciRuby/nmatrix">](https://gitter.im/SciRuby/nmatrix?utm_sou
 rce=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
@@ -18,11 +17,11 @@ Fast Numerical Linear Algebra Library for Ruby
 *   [SciRuby Installation guide](http://sciruby.com/docs#installation)
 
 
-[<img
+<img
 src=https://travis-ci.org/SciRuby/nmatrix.png>](https://travis-ci.org/SciRuby/
 nmatrix)
 
-[<img src="https://codeclimate.com/github/SciRuby/nmatrix.png"
+<img src="https://codeclimate.com/github/SciRuby/nmatrix.png"
 />](https://codeclimate.com/github/SciRuby/nmatrix)
 
 ## Description
@@ -99,7 +98,7 @@ Finally, compile and package as jar.
 
 The commands above build and install only the core `nmatrix` gem.  If you want
 to build one or more of the plugin gems (`nmatrix-atlas`, `nmatrix-lapacke`)
-in addition to the core nmatrix gem, use the `nmatrix_plugins=` option, e.g. 
+in addition to the core nmatrix gem, use the `nmatrix_plugins=` option, e.g.
 `rake compile nmatrix_plugins=all`, `rake install nmatrix_plugins=atlas`,
 `rake clean nmatrix_plugins=atlas,lapacke`. Each of these commands apply to
 the `nmatrix` gem and any additional plugin gems specified. For example, `rake
