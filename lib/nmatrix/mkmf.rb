@@ -27,8 +27,18 @@ def create_conf_h(file) #:nodoc:
   end
 end
 
+
+# It checks if the GNU g++ binary with C++0x/C++11 support is available.
+# It first checks the major version of g++ and returns true if it is greater than 4. # If the major version is less than 0, it returns false. Otherwise, it checks for specific versions starting from 4.9 down to 4.3.
 def find_newer_gplusplus #:nodoc:
   print "checking for apparent GNU g++ binary with C++0x/C++11 support... "
+  major_version = gplusplus_version.split(".").first.to_i
+
+  # modern GCC has that
+  return true if major_version > 4
+  return false if major_version < 4
+
+  # legacy approach, check version 4:
   [9,8,7,6,5,4,3].each do |minor|
     ver = "4.#{minor}"
     gpp = "g++-#{ver}"
@@ -41,6 +51,10 @@ def find_newer_gplusplus #:nodoc:
   false
 end
 
+# It extracts the major, minor, and patch versions of g++
+# by parsing the output of g++ --version command.
+# It raises an exception if any of the versions are nil.
+# Finally, it returns the version string in the format “major.minor.patch”.
 def gplusplus_version
   cxxvar = proc { |n| `#{CONFIG['CXX']} -E -dM - <#{File::NULL} | grep #{n}`.chomp.split(' ')[2] }
   major = cxxvar.call('__GNUC__')
@@ -49,7 +63,9 @@ def gplusplus_version
 
   raise("unable to determine g++ version (match to get version was nil)") if major.nil? || minor.nil? || patch.nil?
 
-  "#{major}.#{minor}.#{patch}"
+  ver = "#{major}.#{minor}.#{patch}"
+  puts "g++ version discovered: " + ver
+  ver
 end
 
 
@@ -96,5 +112,5 @@ if CONFIG.has_key?('warnflags')
   CONFIG['warnflags'].gsub!('-Wdeclaration-after-statement', '')
   CONFIG['warnflags'].gsub!('-Wimplicit-function-declaration', '')
 end
-  
+
 have_func("rb_array_const_ptr", "ruby.h")
