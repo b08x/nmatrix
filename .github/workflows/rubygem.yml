@@ -36,7 +36,9 @@ jobs:
           rake compile
           rake gem nmatrix_plugins=lapacke,fftw
           cd pkg/ && \
-          gem push --KEY github --host https://rubygems.pkg.github.com/${OWNER} *.gem
+          for gem in *.gem; do
+            gem push --KEY github --host https://rubygems.pkg.github.com/${OWNER} $gem
+          done
         env:
           GEM_HOST_API_KEY: "Bearer ${{secrets.GITHUB_TOKEN}}"
           OWNER: ${{ github.repository_owner }}
