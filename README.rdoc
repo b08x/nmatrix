@@ -1,5 +1,7 @@
 = NMatrix
 
+[![CI](https://github.com/b08x/nmatrix/actions/workflows/rubygem.yml/badge.svg)](https://github.com/b08x/nmatrix/actions/workflows/rubygem.yml)
+
 {<img src="https://badges.gitter.im/SciRuby/nmatrix.svg" alt="Join the chat at https://gitter.im/SciRuby/nmatrix">}[https://gitter.im/SciRuby/nmatrix?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge]
 
 Fast Numerical Linear Algebra Library for Ruby
@@ -159,15 +161,15 @@ extension, which is an interface to the FFTW C library. Use
 
 === ATLAS and LAPACKE
 
-The +nmatrix-atlas+ and +nmatrix-lapacke+ gems are optional extensions 
-of the main +nmatrix+ gem that rely on external linear algebra libraries 
-to provide advanced features for dense matrices (singular value 
-decomposition, eigenvalue/eigenvector finding, Cholesky factorization), 
-as well as providing faster implementations of common operations like 
+The +nmatrix-atlas+ and +nmatrix-lapacke+ gems are optional extensions
+of the main +nmatrix+ gem that rely on external linear algebra libraries
+to provide advanced features for dense matrices (singular value
+decomposition, eigenvalue/eigenvector finding, Cholesky factorization),
+as well as providing faster implementations of common operations like
 multiplication, inverses, and determinants. +nmatrix-atlas+ requires the
-{ATLAS library}[http://math-atlas.sourceforge.net/], while +nmatrix-lapacke+ 
-is designed to work with various LAPACK implementations (including ATLAS). 
-The +nmatrix-atlas+ and +nmatrix-lapacke+ gems both provide similar 
+{ATLAS library}[http://math-atlas.sourceforge.net/], while +nmatrix-lapacke+
+is designed to work with various LAPACK implementations (including ATLAS).
+The +nmatrix-atlas+ and +nmatrix-lapacke+ gems both provide similar
 interfaces for using these advanced features.
 
 === *FFTW*
