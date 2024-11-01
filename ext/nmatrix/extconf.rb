@@ -28,9 +28,9 @@
 require File.expand_path("../../../lib/nmatrix/mkmf", __FILE__)
 
 $INSTALLFILES = [
-  ['nmatrix.h'       , '$(archdir)'], 
+  ['nmatrix.h'       , '$(archdir)'],
   ['nmatrix.hpp'     , '$(archdir)'],
-  ['nmatrix_config.h', '$(archdir)'], 
+  ['nmatrix_config.h', '$(archdir)'],
   ['nm_memory.h'     , '$(archdir)'],
   ['ruby_constants.h', '$(archdir)']
 ]
@@ -54,13 +54,13 @@ $srcs = basenames.map { |b| "#{b}.cpp" }
 create_conf_h("nmatrix_config.h")
 create_makefile("nmatrix")
 
-Dir.mkdir("data") unless Dir.exists?("data")
-Dir.mkdir("util") unless Dir.exists?("util")
-Dir.mkdir("storage") unless Dir.exists?("storage")
+Dir.mkdir("data") unless Dir.exist?("data")
+Dir.mkdir("util") unless Dir.exist?("util")
+Dir.mkdir("storage") unless Dir.exist?("storage")
 Dir.chdir("storage") do
-  Dir.mkdir("yale")  unless Dir.exists?("yale")
-  Dir.mkdir("list")  unless Dir.exists?("list")
-  Dir.mkdir("dense") unless Dir.exists?("dense")
+  Dir.mkdir("yale")  unless Dir.exist?("yale")
+  Dir.mkdir("list")  unless Dir.exist?("list")
+  Dir.mkdir("dense") unless Dir.exist?("dense")
 end
 
 # to clean up object files in subdirectories:
